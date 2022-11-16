@@ -1,11 +1,13 @@
 public class HowManyFit {
-    private static final int chairRows = 10;
-    private static final int chairsPerRow = 8;
-
     public static void main( String[] args ) {
-        int roomCapacity = (chairRows * chairsPerRow);
+        int chairRows = Integer.parseInt( args[0] );
+        int chairsPerRow = Integer.parseInt( args[1] );
 
-        System.out.println( "\nA capacidade máxima da sala é de " + roomCapacity + " pessoas e "
-                + roomCapacity * 0.1 + " delas são reservadas para deficiêntes." );
+        int roomCapacity = ( chairRows * chairsPerRow );
+
+        System.out.printf( "\nA capacidade máxima da sala é de %d pessoas e " +
+                        "%.0f delas são reservadas para deficiêntes.\n",
+                roomCapacity, roomCapacity * 0.1
+        );
     }
 }

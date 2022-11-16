@@ -5,6 +5,7 @@ public class coinTypeConverter {
     private static final float[] allBases = {0.1935f, 0.1932f, 0.1704f, 30.9699f, 4.70f};
     private static final String[] allNames = {"Dolar", "Euro", "Libra", "Peso Argentino", "Coroas Tcheca"};
     private static final String[] allSymbols = {"US$", "€", "£", "pesos", "Kč"};
+
     private static final Scanner input = new Scanner( System.in );
 
     public static void main( String[] args ) {

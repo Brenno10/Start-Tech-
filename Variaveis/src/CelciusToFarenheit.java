@@ -9,6 +9,7 @@ public class CelciusToFarenheit {
 
         System.out.println( "\nDigite a temperatura em celcius" );
         float celcius = input.nextFloat();
+
         float result = ( celcius * 9 / 5 ) + 32;
 
         System.out.println( "\nA temperatura " + celcius + "° em farenheit é " + result );

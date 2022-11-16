@@ -26,7 +26,14 @@ public class PoolVolume {
     }
 
     public static float metricVolumeCalc ( float _iDepth, float _fDepth, float _width, float _length ) {
-        float _depth = (_iDepth + _fDepth) / 2;
+        float _depth;
+
+        if ( _fDepth == 0 ) {
+            _depth = _iDepth;
+        }
+        else {
+            _depth = (_iDepth + _fDepth) / 2;
+        }
 
         return (_depth * _width * _length) * 1000;
     }
