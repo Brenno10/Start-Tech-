@@ -21,14 +21,12 @@ public class INSS {
     private static int aliquotLvl( double _salary ) {
         int lvl;
 
-        if ( _salary <= 1212.00 )
+        if ( _salary <= baseSalary[0] )
             lvl = 1;
-        else if ( _salary > 1212.00 && _salary <= 2427.35 )
+        else if ( _salary > baseSalary[0] && _salary <= baseSalary[1] )
             lvl = 2;
-        else if ( _salary > 2527.35 && _salary <= 3641.03 )
+        else if ( _salary > baseSalary[1] && _salary <= baseSalary[2] )
             lvl = 3;
-        else if ( _salary > 3641.03 && _salary <= 7087.22 )
-            lvl = 4;
         else
             lvl = 4;
 
@@ -36,8 +34,7 @@ public class INSS {
     }
 
     private static double calc( double _salary, int _lvl ) {
-        double result = 0;
-        double toCalc;
+        double toCalc, result = 0;
 
         if ( _salary < baseSalary[0] ) {
             result = _salary * aliquot[0];
