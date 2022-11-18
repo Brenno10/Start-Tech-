@@ -50,7 +50,7 @@ public class CanGetLoan {
         if ( _parcels > 24 )
             reason += " - O máximo de parcelas são 24\n";
         if ( _loan / _parcels > _salary * 0.3 )
-            reason += " - O custo dass parcelas do emprestimo superam %30 do seu salário\n";
+            reason += " - O custo das parcelas do emprestimo superam %30 do seu salário\n";
 
         return reason + "O empréstimo foi reprovado.";
     }
