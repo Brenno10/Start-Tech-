@@ -55,6 +55,6 @@ public class FindSmallestAndLargest {
             return "\nO número " + smallest + " é o único número.";
         }
 
-        return "\nO maior número é o " + largest + ", e o menor número é " + smallest + ".";
+        return "\nO maior número é o " + largest + " e o menor número é " + smallest + ".";
     }
 }

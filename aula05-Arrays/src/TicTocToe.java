@@ -33,14 +33,14 @@ public class TicTocToe {
             switch (nextPlayerIndex) {
                 case 1 -> {
                     lastPlayedLeter = "x";
-                    System.out.println("\nPrÛximo jogador: x");
+                    System.out.println("\nPr√≥ximo jogador: x");
                 }
                 case 2 -> {
                     lastPlayedLeter = "o";
-                    System.out.println("\nPrÛximo jogador: o");
+                    System.out.println("\nPr√≥ximo jogador: o");
                 }
             }
-            System.out.println( "Escolha a posiÁ„o (horizontal e vertical)" );
+            System.out.println( "Escolha a posi√ß√£o (horizontal e vertical)" );
             String pos = input.nextLine();
 
             if ( pos.equalsIgnoreCase("stop") ) {
@@ -49,6 +49,13 @@ public class TicTocToe {
             }
 
             String[] splitNum = pos.trim().split("\\s+");
+            while ( !isNaN(splitNum) ) {
+                System.out.println( "\n - Posi√ß√£o inv√°lida - " );
+                setGameBoard();
+
+                splitNum = input.nextLine().trim().split("\\s+");
+            }
+
             for ( int i = 0; i < position.length; i++ ) {
                 position[i] =  Integer.parseInt(splitNum[i]);
             }
@@ -66,7 +73,7 @@ public class TicTocToe {
 
                 if ( verifyWinner(lastPlayedLeter) && !draw ) {
                     setGameBoard();
-                    System.out.printf( "\n%s È o vencedor!", winner );
+                    System.out.printf( "\n%s √© o vencedor!", winner );
                     run = false;
                 } else if ( !verifyWinner(lastPlayedLeter) && draw ) {
                     setGameBoard();
@@ -74,7 +81,7 @@ public class TicTocToe {
                     run = false;
                 }
             } else
-                System.out.println( "\n - PosiÁ„o inv·lida - " );
+                System.out.println( "\n - Posi√ß√£o inv√°lida - " );
         }
     }
 
@@ -164,5 +171,19 @@ public class TicTocToe {
                 gameBoard[0], gameBoard[1], gameBoard[2],
                 gameBoard[3], gameBoard[4], gameBoard[5],
                 gameBoard[6], gameBoard[7], gameBoard[8]);
+    }
+
+    private static boolean isNaN( String[] _str ) {
+        for ( String s : _str ) {
+            if (s == null) {
+                return false;
+            }
+            try {
+                Double.parseDouble(s);
+            } catch (NumberFormatException nfe) {
+                return false;
+            }
+        }
+        return true;
     }
 }
