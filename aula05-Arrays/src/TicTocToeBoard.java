@@ -23,7 +23,7 @@ public class TicTocToeBoard {
                 System.out.println( writeBoard(str) );
                 break;
             }
-        } while ( str.length != 9 && isValidChar(str) );
+        } while ( str.length != 9 && !isValidChar(str) );
 
         input.close();
     }
@@ -36,19 +36,16 @@ public class TicTocToeBoard {
         }
         return true;
     }
-
+// |
     private static String writeBoard(String[] _str) {
-        StringBuilder toReturn = new StringBuilder();
+        String toReturn = "\n";
 
-        for ( int i = 0; i < _str.length; i++ ) {
-            if ( i < 3 )
-                toReturn.append(_str[i]);
-            else if ( i < 6 )
-                toReturn.append("\n").append(_str[i]);
-            else
-                toReturn.append("\n").append(_str[i]);
+        if ( _str.length == 9 ) {
+            toReturn = "\n " + _str[0] + " | " + _str[1] + " | " + _str[2] +
+                    "\n " + _str[3] + " | " + _str[4] + " | " + _str[5] +
+                    "\n " + _str[6] + " | " + _str[7] + " | " + _str[8];
         }
 
-        return toReturn.toString();
+        return toReturn;
     }
 }

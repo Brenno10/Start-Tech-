@@ -17,7 +17,7 @@ public class MostLettersWord {
                 words.add(word);
         }
 
-    System.out.printf( "A maior palavra é %s, com %d letras",
+    System.out.printf( "\nA maior palavra é %s, com %d letras\n",
             words.get( getLargestWord() ), words.get( getLargestWord() ).length() );
 
         input.close();

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class RandomStudentGroups {
+public class StudentGroups {
     private static final Scanner input = new Scanner(System.in);
     private static final ArrayList<String> students = new ArrayList<>();
 
