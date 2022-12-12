@@ -1,9 +1,8 @@
-import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Scanner;
+import java.util.*;
 
 public class StudentGroups {
     private static final Scanner input = new Scanner(System.in);
+    private static final Random rand = new Random();
     private static final ArrayList<String> students = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -37,15 +36,31 @@ public class StudentGroups {
 
     private static String makeGroups() {
         String result = "";
-        int index = 0;
+        List<Integer> indexArr = new ArrayList<>();
+        int index;
+        int lastIndex = rand.nextInt( 0, students.size() );
+        indexArr.add(lastIndex);
+
+        for ( int i = 0; i < students.size(); i++ ) {
+            index = rand.nextInt( 0, students.size() );
+            System.out.println(index);
+            if ( indexArr.get(i) != lastIndex ) {
+                i--;
+            }
+            else {
+                indexArr.add( index );
+                lastIndex = index;
+            }
+        }
 
         for ( int j = 0; j < students.size() / 3; j++ ) {
             result += "\nGrupo " + (j + 1) + ":\n";
             for (int i = 0; i < 3; i++) {
-                result += students.get(index) + "\n";
-                index++;
+                result += students.get(i) + "\n";
             }
         }
         return result;
     }
+
+
 }
