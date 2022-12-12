@@ -49,7 +49,7 @@ public class TicTocToe {
             }
 
             String[] splitNum = pos.trim().split("\\s+");
-            while ( !isNaN(splitNum) ) {
+            while ( !isNaN(splitNum) || splitNum.length != 2 ) {
                 System.out.println( "\n - Posição inválida - " );
                 setGameBoard();
 
