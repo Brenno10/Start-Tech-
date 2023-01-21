@@ -8,10 +8,10 @@ public class Game {
     public static void main(String[] args) throws InterruptedException {
         Equipment chainmail = new Equipment("Cota de Malha", "def", 4);
         chainmail.equip(player);
-        Equipment sword = new Equipment("Espada", "atk", 2);
+        Equipment sword = new Equipment("Espada", "pres", 2);
         sword.equip(player);
 
-        Equipment axe = new Equipment("Machado", "atk", 0);
+        Equipment axe = new Equipment("Machado", "pres", 0);
         axe.equip(orc);
 
         int i = 1;

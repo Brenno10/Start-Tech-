@@ -2,21 +2,21 @@ public class Character {
     public String name;
     public String species;
     public int hp;
-    public int atk;
+    public int pres;
     public int def;
     public Equipment weapon;
 
-    public Character(String name, String species, int hp, int atk, int def) {
+    public Character(String name, String species, int hp, int pres, int def) {
         this.name = name;
         this.species = species;
         this.hp = hp;
-        this.atk = atk;
+        this.pres = pres;
         this.def = def;
     }
 
     public void attack(Character character, Dice d20, Dice damageDice) throws InterruptedException {
         int diceRoll = d20.rollDice();
-        int result = diceRoll + this.atk;
+        int result = diceRoll + this.pres;
         int dmg = damageDice.rollDice();
 
         Thread.sleep(1000);
@@ -24,7 +24,7 @@ public class Character {
         Thread.sleep(1000);
 
         if ( result >= character.def ) {
-            System.out.printf(  "\nO ataque foi %d e acertou! (%d + %d)", result, diceRoll, this.atk );
+            System.out.printf(  "\nO ataque foi %d e acertou! (%d + %d)", result, diceRoll, this.pres);
             character.hp -= dmg;
 
             System.out.printf("\n%s recebe %d pontos de dano.", character.name, dmg );
@@ -36,7 +36,7 @@ public class Character {
             }
         }
         else {
-            System.out.printf("\nO ataque foi %d e errou! (%d + %d)", result, diceRoll, this.atk);
+            System.out.printf("\nO ataque foi %d e errou! (%d + %d)", result, diceRoll, this.pres);
             Thread.sleep(1000);
         }
         System.out.println("");

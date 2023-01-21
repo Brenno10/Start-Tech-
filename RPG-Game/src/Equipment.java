@@ -11,8 +11,8 @@ public class Equipment {
 
     public void equip(Character character) {
         switch (this.type.toLowerCase()) {
-            case "atk" -> {
-                character.atk += this.value;
+            case "pres" -> {
+                character.pres += this.value;
                 character.weapon =  this;
             }
             case "def" -> {
